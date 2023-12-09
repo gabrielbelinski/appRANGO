@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b705d310-83c1-47b6-a4cd-b2d29ead6026" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/appRANGO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RANGO/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appRANGO/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appRANGO/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appRANGO/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appRANGO/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appRANGO/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="b705d310-83c1-47b6-a4cd-b2d29ead6026" name="Changes" comment="Commit inicial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +14,11 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="nao" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -53,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,11 +89,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702158038511</updated>
-      <workItem from="1702158041723" duration="1245000" />
+      <workItem from="1702158041723" duration="1663000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit inicial">
+      <option name="closed" value="true" />
+      <created>1702159822579</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702159822579</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit inicial" />
   </component>
 </project>
