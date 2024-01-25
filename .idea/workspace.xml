@@ -4,14 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b705d310-83c1-47b6-a4cd-b2d29ead6026" name="Changes" comment="Commit inicial" />
+    <list default="true" id="b705d310-83c1-47b6-a4cd-b2d29ead6026" name="Changes" comment="Commit na branch backend">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RANGO/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RANGO/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RANGO/templates/produto_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RANGO/templates/produto_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RANGO/templates/produto_update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RANGO/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/RANGO/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appRANGO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appRANGO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RANGO/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RANGO/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RANGO/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RANGO/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appRANGO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/appRANGO/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appRANGO/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appRANGO/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" module-name="appRANGO" is-module-sdk="true">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+    <option name="myUseModuleSdk" value="true" />
+    <option name="myModuleName" value="appRANGO" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -20,6 +47,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -30,23 +60,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.appRANGO.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.appRANGO.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/PycharmProjects/appRANGO/db.sqlite3&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="appRANGO" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="appRANGO" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\PycharmProjects\appRANGO\static\RANGO" />
+      <recent name="C:\Users\gabri\PycharmProjects\appRANGO\RANGO" />
+      <recent name="C:\Users\gabri\PycharmProjects\appRANGO\static" />
+      <recent name="C:\Users\gabri\PycharmProjects\appRANGO\RANGO\templates\css" />
+      <recent name="C:\Users\gabri\PycharmProjects\appRANGO\RANGO\templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="appRANGO" type="Python.DjangoServer" factoryName="Django server">
       <module name="appRANGO" />
@@ -77,7 +132,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-67fca87a943a-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.259" />
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
       </set>
     </attachedChunks>
   </component>
@@ -89,7 +144,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702158038511</updated>
-      <workItem from="1702158041723" duration="1663000" />
+      <workItem from="1702158041723" duration="2327000" />
+      <workItem from="1702639973051" duration="1526000" />
+      <workItem from="1702641835362" duration="990000" />
+      <workItem from="1702946502669" duration="54000" />
+      <workItem from="1704476344735" duration="287000" />
+      <workItem from="1704476719407" duration="694000" />
+      <workItem from="1704980051848" duration="25000" />
+      <workItem from="1705068796137" duration="587000" />
+      <workItem from="1705878250988" duration="18000" />
+      <workItem from="1705878288433" duration="15000" />
+      <workItem from="1706031235534" duration="973000" />
+      <workItem from="1706050172231" duration="595000" />
+      <workItem from="1706120150051" duration="879000" />
+      <workItem from="1706122280437" duration="3213000" />
+      <workItem from="1706137986325" duration="197000" />
+      <workItem from="1706138213688" duration="5924000" />
+      <workItem from="1706183757575" duration="3900000" />
+      <workItem from="1706196562739" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -99,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702159822579</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit na branch backend">
+      <option name="closed" value="true" />
+      <created>1702160082942</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702160082942</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +187,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit inicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit inicial" />
+    <MESSAGE value="Commit na branch backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit na branch backend" />
   </component>
 </project>
