@@ -12,6 +12,11 @@ class CriaProdutoForm(forms.ModelForm):
             'descricao',
             'preco',
             'quantidade',
-            'disponibilidade'
+            'disponibilidade',
+            'imagem'
         ]
+
+        widgets = {
+            'imagem': forms.FileInput(attrs={'accept': 'image/*'})
+        }
 

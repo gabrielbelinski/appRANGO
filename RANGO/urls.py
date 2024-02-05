@@ -5,6 +5,7 @@ from RANGO.views import *
 app_name = 'RANGO'
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('listaprodutos/', ListaProdutos.as_view(), name='lista_produtos'),
-    path('criaprodutos/', CriarProduto.as_view(), name='cria_produto'),
+    path('criaprodutos/', views.criar_produto, name='cria_produto')
 ]

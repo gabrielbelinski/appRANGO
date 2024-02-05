@@ -1,6 +1,6 @@
-{% include "base.html" %}
+{% extends '_base.html' %}
 {% block title %}Listagem de produtos{% endblock %}
-<body>
+
 {% block content %}
 <table>
     <tbody>
@@ -11,11 +11,9 @@
         <td> {{  produto.descricao }}</td>
         <td> {{  produto.quantidade }}</td>
         <td> {{  produto.disponibilidade }}</td>
+            <td><img src="{{ produto.imagem }}" alt="Imagem do produto"></td>
         </tr>
     {%  endfor %}
     </tbody>
 </table>
 {% endblock %}
-
-</body>
-</html>
