@@ -1,0 +1,55 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <div class="card" style="width: 50%; margin: auto;">
+        <div class="card-body" style="max-height: 500px; overflow-y: auto;">
+            <h2 class="card-title">Pedidos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Total (R$)</th>
+                        <th>Data</th>
+                        <th>Concluído</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pedido in pedidos %}
+                        <tr>
+                            <td>{{ pedido.cliente_nome }}</td>
+                            <td>{{ pedido.total }}</td>
+                            <td>{{ pedido.data }}</td>
+                            <td>{% if pedido.concluido %}
+                                Sim
+                                {% else %}
+                                Não
+                            {% endif %}</td>
+                            <td>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Quantidade</th>
+                                            <th>Preço unitário (R$)</th>
+                                            <th>Imagem</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in pedido.itempedido_set.all %}
+                                            <tr>
+                                                <td>{{ item.produto.nome }}</td>
+                                                <td>{{ item.quantidade }}</td>
+                                                <td>{{ item.preco_unitario }}</td>
+                                                <td><img src="{{ item.produto.imagem.url }}" width="50px" alt=""></td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,11 +1,12 @@
 from django.urls import path
 from . import views
-from RANGO.views import *
+from RANGO.views import adicionar_produtos, lista_produtos, lista_pedidos
 
 app_name = 'RANGO'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('listaprodutos/', ListaProdutos.as_view(), name='lista_produtos'),
-    path('criaprodutos/', views.criar_produto, name='cria_produto')
+    path('adicionarprodutos/', adicionar_produtos, name='adicionar_produtos'),
+    path('listapedidos/', lista_pedidos, name='lista_pedidos'),
+    path('listaprodutos/', lista_produtos, name='lista_produtos')
 ]

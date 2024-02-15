@@ -1,19 +1,41 @@
 {% extends '_base.html' %}
-{% block title %}Listagem de produtos{% endblock %}
 
 {% block content %}
-<table>
-    <tbody>
-    {% for produto in produtos %}
-        <tr>
-        <td>{{  produto.nome }}</td>
-        <td> {{ produto.preco }}</td>
-        <td> {{  produto.descricao }}</td>
-        <td> {{  produto.quantidade }}</td>
-        <td> {{  produto.disponibilidade }}</td>
-            <td><img src="{{ produto.imagem }}" alt="Imagem do produto"></td>
-        </tr>
-    {%  endfor %}
-    </tbody>
-</table>
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card" style="width: 50%;">
+             <div class="card-body" style="max-height: 500px; overflow-y: auto;">
+                <div style="text-align: center;"><h2 class="card-title">Produtos disponíveis</h2></div>
+                <form method="post" action="{% url 'RANGO:adicionar_produtos' %}">
+                    {% csrf_token %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Preço (R$)</th>
+                                <th>Quantidade</th>
+                                <th>Imagem</th>
+                                <th>Adicionar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for produto in produtos %}
+                                <tr>
+                                    <td>{{ produto.nome }}</td>
+                                    <td>{{ produto.preco }}</td>
+                                    <td><label>
+                                        <input type="number" name="quantidade_{{ produto.id }}" min="0" max="{{ produto.quantidade }}" value="0">
+                                    </label></td>
+                                    <td><img src="{{  produto.imagem.url }}" alt="" width="100"></td>
+                                    <td><label>
+                                        <input type="checkbox" name="produtos" value="{{ produto.id }}">
+                                    </label></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                   <div style="text-align: center;"><button type="submit" class="btn btn-primary">Adicionar produtos ao pedido</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

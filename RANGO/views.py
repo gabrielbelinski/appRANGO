@@ -1,39 +1,36 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
-from django.utils.html import format_html
-
-from RANGO.forms import CriaProdutoForm
-from RANGO.models import Produto
-from django.views.generic import ListView, UpdateView, DeleteView, CreateView
-# Create your views here.
-
-class ListaProdutos(ListView):
-        model = Produto
-        template_name = 'produto_list.html'
-        context_object_name = 'produtos'
-        list_display = ('nome', 'preco', 'descricao', 'quantidade', 'disponibilidade', 'imagem_tag')
-
-        def imagem_tag(self, obj):
-            return format_html('<img src="{}" width="50" height="50" />'.format(obj.imagem.url))
-
-        imagem_tag.short_description = 'Image'
-
-class AtualizaProduto(UpdateView):
-    template_name = "produto_update.html"
-    model = Produto
-    fields = '__all__'
-    success_url = reverse_lazy(ListaProdutos)
-
-def criar_produto(request):
-    if request.method == 'POST':
-        form = CriaProdutoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('listaprodutos')
-    else:
-        form = CriaProdutoForm()
-    return render(request, 'produto_create.html', {'form': form})
-
+from RANGO.models import Produto, Pedido, ItemPedido
 
 def index(request):
     return render(request, "index.html")
+
+def lista_produtos(request):
+    produtos = Produto.objects.filter(quantidade__gt=0)
+    return render(request, 'produto_list.html', {'produtos': produtos})
+
+def lista_pedidos(request):
+    pedidos = Pedido.objects.filter(concluido=False)
+    return render(request, 'pedidos_list.html', {'pedidos': pedidos})
+
+def adicionar_produtos(request):
+    if request.method == 'POST':
+        produtos_ids = request.POST.getlist('produtos')
+        quantidades = {}
+        for produto_id in produtos_ids:
+            quantidade = int(request.POST['quantidade_' + produto_id])
+            if quantidade > 0:
+                quantidades[produto_id] = quantidade
+        pedido = Pedido.objects.create(cliente_nome='Nome do cliente')
+        total = 0
+        for produto_id, quantidade in quantidades.items():
+            produto = Produto.objects.get(id=produto_id)
+            preco_unitario = produto.preco
+            total += preco_unitario * quantidade
+            produto.quantidade -= quantidade
+            produto.save()
+            ItemPedido.objects.create(pedido=pedido, produto=produto, quantidade=quantidade, preco_unitario=preco_unitario)
+        pedido.total = total
+        pedido.save()
+        return redirect('RANGO:lista_pedidos')
+    else:
+        return redirect('RANGO:lista_produtos')
