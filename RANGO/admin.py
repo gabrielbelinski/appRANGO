@@ -38,7 +38,7 @@ class ItemPedidoInline(admin.TabularInline):
 
 class PedidoAdmin(admin.ModelAdmin):
     inlines = [ItemPedidoInline]
-    list_display = ('cliente_nome', 'total', 'data', 'concluido', 'edit_pedido', 'remove_pedido')
+    list_display = ('id', 'cliente_nome', 'total', 'data', 'concluido', 'edit_pedido', 'remove_pedido')
     list_filter = ('concluido',)
     search_fields = ('cliente_nome',)
 
@@ -57,3 +57,4 @@ class PedidoAdmin(admin.ModelAdmin):
 
 admin.site.register(Pedido, PedidoAdmin)
 admin.site.register(ItemPedido)
+

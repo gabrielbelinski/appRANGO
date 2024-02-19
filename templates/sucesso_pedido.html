@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card" style="width: 90%;">
+            <div class="card-body text-center">
+                <h1>Pedido efetuado com sucesso!</h1>
+                <p>Você quem manda! Acompanhe o preparo do seu pedido ou peça novamente.</p>
+                <a class="btn btn-primary btn-lg" href="{% url 'RANGO:lista_pedidos_public' %}">Acompanhar pedido</a>
+                <a class="btn btn-primary btn-lg" href="{% url 'RANGO:adicionar_produtos' %}">Pedir novamente</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

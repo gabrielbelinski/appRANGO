@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
+
 admin.site.site_header = "RANGO"
 admin.site.site_title = "Gerência"
 admin.site.index_title = "Administração geral do sistema"

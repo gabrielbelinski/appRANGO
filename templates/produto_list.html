@@ -2,40 +2,87 @@
 
 {% block content %}
     <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
-        <div class="card" style="width: 50%;">
-             <div class="card-body" style="max-height: 500px; overflow-y: auto;">
-                <div style="text-align: center;"><h2 class="card-title">Produtos disponíveis</h2></div>
-                <form method="post" action="{% url 'RANGO:adicionar_produtos' %}">
+        <div class="card" style="width: 95%; margin: auto;">
+             <div class="card-body" style="max-height: 600px; overflow-y: auto;">
+                <div style="text-align: center;"><h1 class="card-title">Faça seu pedido!</h1></div>
+                <form method="post" action="{% url 'RANGO:adicionar_produtos' %}" id="addProdutoForm">
                     {% csrf_token %}
+                  <div class="form-group">
+                        <div style="text-align: center;"><label for="cliente_nome">Para iniciar, digite o seu nome abaixo:</label></div>
+                      <input type="text" class="form-control" id="cliente_nome" name="cliente_nome" required></div>
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Imagem</th>
                                 <th>Nome</th>
+                                <th>Descrição</th>
                                 <th>Preço (R$)</th>
                                 <th>Quantidade</th>
-                                <th>Imagem</th>
-                                <th>Adicionar</th>
+                                <th>Adicionar?</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for produto in produtos %}
                                 <tr>
+                                    <td><img src="{{  produto.imagem.url }}" alt="" width="100"></td>
                                     <td>{{ produto.nome }}</td>
+                                    <td>{{ produto.descricao }}</td>
                                     <td>{{ produto.preco }}</td>
                                     <td><label>
-                                        <input type="number" name="quantidade_{{ produto.id }}" min="0" max="{{ produto.quantidade }}" value="0">
+                                        <input type="number" name="quantidade_{{ produto.id }}" min="1" max="{{ produto.quantidade }}" value="0" class="form-control" id="quantidade_{{ produto.id }}" disabled>
                                     </label></td>
-                                    <td><img src="{{  produto.imagem.url }}" alt="" width="100"></td>
+
                                     <td><label>
-                                        <input type="checkbox" name="produtos" value="{{ produto.id }}">
+                                        <input type="checkbox" name="produtos" value="{{ produto.id }}" onchange="habilitarQuantidade(this, 'quantidade_{{ produto.id }}')">
                                     </label></td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-                   <div style="text-align: center;"><button type="submit" class="btn btn-primary">Adicionar produtos ao pedido</button></div>
+                 <div class="form-group">
+            <div style="text-align: center;"><label for="observacoes">Se desejar, faça as observações referentes ao pedido aqui (ex: lanche sem tomate, café sem açúcar, etc.):</label></div>
+            <textarea class="form-control" id="observacoes" name="observacoes" rows="3"></textarea>
+    </div>
+                   <div style="text-align: center;"><button type="submit" class="btn btn-primary" disabled>Adicionar produtos ao pedido</button></div>
                 </form>
             </div>
         </div>
     </div>
+     <script>
+        function habilitarQuantidade(checkbox, quantidade_id) {
+            if (checkbox.checked) {
+                document.getElementById(quantidade_id).disabled = false;
+            } else {
+                document.getElementById(quantidade_id).disabled = true;
+                document.getElementById(quantidade_id).value = 0;
+            }
+        }
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("addProdutoForm");
+    const clienteNome = document.getElementById("cliente_nome");
+    const checkboxes = document.querySelectorAll("input[name='produtos']");
+
+    form.addEventListener("input", function() {
+        let isFormValid = false;
+
+        if (clienteNome.value.trim() !== "") {
+            isFormValid = true;
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    isFormValid = true;
+                    return;
+                }
+            });
+        }
+
+        if (isFormValid) {
+            form.querySelector('button[type="submit"]').removeAttribute("disabled");
+        } else {
+            form.querySelector('button[type="submit"]').setAttribute("disabled", "disabled");
+        }
+    });
+});
+    </script>
 {% endblock %}

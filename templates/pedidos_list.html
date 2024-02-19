@@ -1,16 +1,18 @@
 {% extends '_base.html' %}
 
 {% block content %}
-    <div class="card" style="width: 50%; margin: auto;">
-        <div class="card-body" style="max-height: 500px; overflow-y: auto;">
-            <h2 class="card-title">Pedidos</h2>
-            <table class="table">
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card" style="width: 100%; margin: auto;">
+        <div class="card-body" style="max-height: 1000px; overflow-y: auto;">
+            <div style="text-align: center;"><h1 class="card-title">Pedidos pendentes</h1></div>
+            <table class="table table-striped ">
                 <thead>
                     <tr>
                         <th>Cliente</th>
                         <th>Total (R$)</th>
                         <th>Data</th>
-                        <th>Concluído</th>
+                        <th>Status</th>
+                        <th>Descrição do Pedido</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,19 +21,18 @@
                             <td>{{ pedido.cliente_nome }}</td>
                             <td>{{ pedido.total }}</td>
                             <td>{{ pedido.data }}</td>
-                            <td>{% if pedido.concluido %}
-                                Sim
-                                {% else %}
-                                Não
+                            <td>{% if not pedido.concluido %}
+                                Não concluído
                             {% endif %}</td>
                             <td>
-                                <table class="table table-borderless">
+                                <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Nome</th>
+                                            <th>Produto</th>
                                             <th>Quantidade</th>
-                                            <th>Preço unitário (R$)</th>
+                                            <th>Preço unitário</th>
                                             <th>Imagem</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,7 +40,7 @@
                                             <tr>
                                                 <td>{{ item.produto.nome }}</td>
                                                 <td>{{ item.quantidade }}</td>
-                                                <td>{{ item.preco_unitario }}</td>
+                                                <td>{{ item.produto.preco }}</td>
                                                 <td><img src="{{ item.produto.imagem.url }}" width="50px" alt=""></td>
                                             </tr>
                                         {% endfor %}
@@ -52,4 +53,10 @@
             </table>
         </div>
     </div>
+    </div>
+    <script>
+    setInterval(function() {
+        location.reload();
+    }, 5000);
+</script>
 {% endblock %}
