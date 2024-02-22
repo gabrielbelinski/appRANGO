@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'RANGO.apps.RangoConfig',
-    'widget_tweaks'
+    'widget_tweaks',
+    'django_extensions',
+    'django_dia'
 ]
 
 MIDDLEWARE = [
